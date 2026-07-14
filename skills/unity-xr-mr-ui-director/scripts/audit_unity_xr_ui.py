@@ -286,7 +286,7 @@ def scan_assets(
             continue
 
         scanned += 1
-        rel = str(path.relative_to(project))
+        rel = path.relative_to(project).as_posix()
         counts: dict[str, int] = {}
         canvas_count = len(CANVAS_PATTERN.findall(text))
         if canvas_count:
